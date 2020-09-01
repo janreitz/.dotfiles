@@ -5,6 +5,7 @@ dotfiles=(
 	".bashrc"
 	".bash_aliases"
 	".vimrc"
+	".env"
 )
 
 for dotfile in "${dotfiles[@]}"; do
