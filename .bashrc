@@ -80,8 +80,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Alias definitions.
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
+if [ -f "${HOME}/.aliases" ]; then
+    source "${HOME}/.aliases"
 fi
 
 # Environment setup
