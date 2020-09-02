@@ -24,11 +24,8 @@ backup_if_exists() {
 
 dotfiles=(
 	".bashrc"
-	".bash_aliases"
-	".vimrc"
+	".aliases"
 	".env"
-	".zshrc"
-	".gitconfig"
 )
 
 for dotfile in "${dotfiles[@]}"; do
@@ -36,4 +33,10 @@ for dotfile in "${dotfiles[@]}"; do
 	ln -s "$(pwd)/$dotfile" "${HOME}/$dotfile"
 done
 
- 
+PROGRAMS=( git vim zsh)
+for program in ${PROGRAMS[@]}"; do
+	stow -v --target=$HOME $program
+	echo "Configuring $program"
+done
+
+echo "Done!"
