@@ -100,4 +100,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source /home/jan/.config/broot/launcher/bash/br
