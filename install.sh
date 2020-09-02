@@ -9,7 +9,19 @@ git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/theme
 # spaceship-prompt symlink
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
 
-# Substitute existing dotfiles with symbolic links
+# Backup exiting dotfiles and add symblic links to the ones in this dir
+OLD_DOTFILES=".dotfile_backup_$(date -u +"%Y%m&d%H%M%S")"
+mkdir $OLD_DOTFILES
+
+backup_if_exists() {
+	if [ -f $1 ]; then
+		mv $1 $OLD_DOTFILES
+	fi
+	if [ -d $1 ]; then
+		mv $1 $OLD_DOTFILES
+	fi
+}
+
 dotfiles=(
 	".bashrc"
 	".bash_aliases"
@@ -19,7 +31,7 @@ dotfiles=(
 )
 
 for dotfile in "${dotfiles[@]}"; do
-	rm -rf "${HOME}/$dotfile"
+	backup_if_exists $dotfile
 	ln -s "$(pwd)/$dotfile" "${HOME}/$dotfile"
 done
 
