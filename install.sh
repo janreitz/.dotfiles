@@ -33,7 +33,7 @@ for dotfile in "${dotfiles[@]}"; do
 	ln -s "$(pwd)/$dotfile" "${HOME}/$dotfile"
 done
 
-PROGRAMS=( git vim zsh)
+PROGRAMS=( git vim zsh broot )
 for program in ${PROGRAMS[@]}"; do
 	stow -v --target=$HOME $program
 	echo "Configuring $program"
