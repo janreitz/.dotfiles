@@ -89,3 +89,6 @@ let g:ctrlp_map = '<c-p>'
 set splitbelow
 set splitright
 
+if [ -f "${HOME}/.aliases" ]; then
+	source "${HOME}/.aliases"
+fi
