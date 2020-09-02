@@ -10,7 +10,7 @@ git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/theme
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
 
 # Backup exiting dotfiles and add symblic links to the ones in this dir
-OLD_DOTFILES=".dotfile_backup_$(date -u +"%Y%m&d%H%M%S")"
+OLD_DOTFILES="${HOME}/.dotfile_backup_$(date -u +"%Y%m%d%H%M%S")"
 mkdir $OLD_DOTFILES
 
 backup_if_exists() {
@@ -28,10 +28,11 @@ dotfiles=(
 	".vimrc"
 	".env"
 	".zshrc"
+	".gitconfig"
 )
 
 for dotfile in "${dotfiles[@]}"; do
-	backup_if_exists $dotfile
+	backup_if_exists "${HOME}/$dotfile"
 	ln -s "$(pwd)/$dotfile" "${HOME}/$dotfile"
 done
 
