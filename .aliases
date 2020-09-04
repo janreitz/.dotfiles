@@ -1,6 +1,7 @@
 # git
 alias gs="git status"
 alias gca="git commit --amend --no-edit"
+alias gitlog="git log --all --graph --decorate"
 
 # general
 alias mv="mv -i" # Make move ask before overwriting
