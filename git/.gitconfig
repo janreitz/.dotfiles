@@ -4,3 +4,7 @@
 
 [alias]
 	graph = log --all --graph --pretty=format:'%C(auto)=%h%C(auto)%d %s %C(dim, white)(%aN, %ar)'
+
+[core]
+	editor = vim
+
