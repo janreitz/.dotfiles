@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-apt install zsh
-apt-get install fonts-powerline
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
- 
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-# spaceship-prompt symlink
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
-
 # Backup exiting dotfiles and add symblic links to the ones in this dir
 OLD_DOTFILES="${HOME}/.dotfile_backup_$(date -u +"%Y%m%d%H%M%S")"
 mkdir $OLD_DOTFILES
