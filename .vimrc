@@ -96,5 +96,3 @@ Plug 'chriskempson/base16-vim'
 " Initialize plugin system
 call plug#end()
 
-let base16colorspace=256 
-colorscheme base16-tomorrow-night
