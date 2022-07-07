@@ -17,6 +17,8 @@ dotfiles=(
 	".bashrc"
 	".aliases"
 	".env"
+	".vimrc"
+	".zshrc"
 )
 
 for dotfile in "${dotfiles[@]}"; do
