@@ -16,9 +16,9 @@ backup_if_exists() {
 dotfiles=(
 	".bashrc"
 	".aliases"
-	".env"
 	".vimrc"
 	".zshrc"
+	".gitconfig"
 )
 
 for dotfile in "${dotfiles[@]}"; do
