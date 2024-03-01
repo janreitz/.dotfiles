@@ -1,5 +1,6 @@
 # git
 alias gs="git status"
+alias gc="git commit"
 alias gca="git commit --amend --no-edit"
 alias gitlog="git log --all --graph --decorate"
 
