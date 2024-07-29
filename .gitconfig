@@ -19,3 +19,9 @@
 
 [pull]
 	rebase = true
+[merge]
+	tool = meld
+[mergetool "meld"]
+	path = /usr/bin/meld
+[init]
+	defaultBranch = main
