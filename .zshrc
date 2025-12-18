@@ -145,3 +145,8 @@ n ()
         rm -f -- "$NNN_TMPFILE" > /dev/null
     }
 }
+
+fcd() {
+  local dir
+  dir=$(fd --type d --base-directory "${1:-.}" --absolute-path | fzf --preview 'ls -la {}') && cd "$dir"
+}
