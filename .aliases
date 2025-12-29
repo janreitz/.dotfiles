@@ -6,8 +6,18 @@ alias gitlog="git log --all --graph --decorate"
 
 # general
 alias mv="mv -i" # Make move ask before overwriting
-
 alias kw="date +%V"
+alias fd="fdfind"
+# on wayland, xclip is unreliabe
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    if command -v wl-copy &> /dev/null; then
+        alias clip='wl-copy'
+    else
+        alias clip='echo "wl-copy not installed. Run: sudo apt install wl-clipboard" >&2'
+    fi
+else
+    alias clip='xclip -selection clipboard'
+fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
