@@ -2,9 +2,11 @@
 
 # Backup exiting dotfiles and add symblic links to the ones in this dir
 OLD_DOTFILES="${HOME}/.dotfile_backup_$(date -u +"%Y%m%d%H%M%S")"
-mkdir $OLD_DOTFILES
 
 backup_if_exists() {
+	# Doesn't error if exists
+	mkdir -p $OLD_DOTFILES
+
 	if [ -f $1 ]; then
 		mv $1 $OLD_DOTFILES
 	fi
@@ -14,12 +16,14 @@ backup_if_exists() {
 }
 
 dotfiles=(
-	".bashrc"
 	".aliases"
+	".bashrc"
+	".env"
+	".gitconfig"
+	".spaceshiprc.zsh"
+	".tmux.conf"
 	".vimrc"
 	".zshrc"
-	".gitconfig"
-	".tmux.conf"
 )
 
 for dotfile in "${dotfiles[@]}"; do
