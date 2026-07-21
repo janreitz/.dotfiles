@@ -43,6 +43,26 @@ source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#6c6c6c'
 
+# ---- Plugin: zsh-bookmarks ----------------------------------------------
+# Uses compdef; must stay below the compinit block.
+source ~/.zsh/zsh-bookmarks/zsh-bookmarks.zsh
+
+# Alt+J: pick a bookmark via fzf (frecency-ranked) and cd to it
+bmk-jump() {
+  local dir
+  dir=$(bml | fzf --preview 'ls -la {}') && bmg "$dir"
+  zle reset-prompt
+}
+zle -N bmk-jump
+bindkey '\ej' bmk-jump
+
+# Alt+M: bookmark the current directory; leaves the edit buffer untouched
+bmk-add() {
+  zle -M "$(bm)"
+}
+zle -N bmk-add
+bindkey '\em' bmk-add
+
 
 # ---- Misc options ---------------------------------------------------------
 unsetopt BEEP # Turn off all beeps
