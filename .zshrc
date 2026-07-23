@@ -32,8 +32,8 @@ source /usr/share/doc/fzf/examples/completion.zsh
 
 export FZF_DEFAULT_OPTS='--layout=reverse'
 
-# ---- Prompt: spaceship -------------------------------------------------
-source ~/.zsh/spaceship-prompt/spaceship.zsh
+# ---- Prompt --------------------------------------------------------------
+source ~/.zsh/prompt.zsh
 
 # ---- Plugin: fzf-tab  ---------------------------------------
 # Needs to be loaded before widgets that wrap completion widgets -> zsh-autosuggestions
