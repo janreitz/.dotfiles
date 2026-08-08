@@ -63,6 +63,17 @@ bmk-add() {
 zle -N bmk-add
 bindkey '\em' bmk-add
 
+# ---- Plugin: zsh-snippets -------------------------------------------------
+source ~/.zsh/zsh-snippets/zsh-snippets.zsh
+
+# Alt+P: snippet palette; enter inserts at cursor, ctrl-e edits the snippet
+bindkey '\ep' snip-pick
+
+# Ctrl-X Ctrl-E: edit the current command line in $EDITOR
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 
 # ---- Misc options ---------------------------------------------------------
 unsetopt BEEP # Turn off all beeps

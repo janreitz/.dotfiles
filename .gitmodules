@@ -1,0 +1,3 @@
+[submodule ".zsh/zsh-snippets"]
+	path = .zsh/zsh-snippets
+	url = git@github.com:janreitz/zsh-snippets.git
