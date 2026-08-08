@@ -79,6 +79,6 @@ autoload -Uz add-zsh-hook
 add-zsh-hook preexec _prompt_preexec
 add-zsh-hook precmd  _prompt_precmd
 
-PROMPT='%F{blue}%n%f@%F{green}%m%f %F{cyan}%~%f${_prompt_git}${_prompt_duration}
+PROMPT='%F{green}%m%f %F{cyan}%~%f${_prompt_git}${_prompt_duration}
 %(?.%F{green}.%F{red})➜%f '
 RPROMPT=''
