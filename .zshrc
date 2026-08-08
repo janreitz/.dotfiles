@@ -106,6 +106,13 @@ n ()
     }
 }
 
+updir() {
+  cd ..
+  zle reset-prompt
+}
+zle -N updir
+bindkey "\eh" updir
+
 fcd() {
   local dir
   dir=$(fd --type d --base-directory "${1:-.}" --absolute-path | fzf --preview 'ls -la {}') && cd "$dir"
