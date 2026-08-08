@@ -31,4 +31,17 @@ for dotfile in "${dotfiles[@]}"; do
 	ln -s "$(pwd)/$dotfile" "${HOME}/$dotfile"
 done
 
+# Directories symlinked into ~/.config: "<repo dir>:<config name>"
+config_dirs=(
+	"neovim:nvim"
+)
+
+mkdir -p "${HOME}/.config"
+for entry in "${config_dirs[@]}"; do
+	src="${entry%%:*}"
+	dest="${HOME}/.config/${entry#*:}"
+	backup_if_exists "$dest"
+	ln -s "$(pwd)/$src" "$dest"
+done
+
 echo "Done!"
